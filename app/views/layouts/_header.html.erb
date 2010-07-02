@@ -1,0 +1,18 @@
+<div id="header" class="container round">
+  <%= image_tag("dcmitlogo.png", :alt => "Sample App", :class => "round") %>
+  <ul class="navigation round">
+    <li><%= link_to "Home", new_user_session_path %></li>
+    <li><%= link_to "Help", '#' %></li>
+
+    <% 
+    if @user_session
+      @signing = 'Sign in'
+      @signlink = ":controller => 'users'; :action => 'new'"
+    else
+      @signing = 'Sign out'
+      @signlink = ":controller => 'users'; :action => 'destroy'"
+    end 
+    %>
+    <li><%= link_to @signing, @signlink %></li>
+  </ul>
+</div>

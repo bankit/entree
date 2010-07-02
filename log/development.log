@@ -1,0 +1,2729 @@
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100630065446)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255), "email" varchar(255), "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100630065446')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (3.8ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (2.6ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100630065446)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (7.5ms)[0m   [0;1mCREATE TABLE "users" ("id" serial primary key, "login" character varying(255), "email" character varying(255), "crypted_password" character varying(255), "password_salt" character varying(255), "persistence_token" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100630065446')[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-30 15:16:39) [GET]
+
+ActionController::RoutingError (No route matches "/new" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-30 15:16:43) [GET]
+
+ActionController::RoutingError (No route matches "/login" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-30 15:16:46) [GET]
+
+ActionController::RoutingError (No route matches "/user" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-06-30 15:17:20) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+
+ActionController::UnknownAction (No action responded to index. Actions: create, edit, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-30 15:17:25) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+
+NameError (undefined local variable or method `my_value' for #<Class:0x2650c3c>):
+  app/models/user.rb:3
+  authlogic (2.1.5) lib/authlogic/acts_as_authentic/base.rb:33:in `acts_as_authentic'
+  app/models/user.rb:2
+  authlogic (2.1.5) lib/authlogic/session/klass.rb:33:in `klass'
+  authlogic (2.1.5) lib/authlogic/session/password.rb:90:in `login_field'
+  authlogic (2.1.5) lib/authlogic/session/password.rb:213:in `login_field'
+  authlogic (2.1.5) lib/authlogic/session/password.rb:118:in `initialize'
+  authlogic (2.1.5) lib/authlogic/session/activation.rb:48:in `initialize'
+  authlogic (2.1.5) lib/authlogic/session/klass.rb:64:in `initialize'
+  authlogic (2.1.5) lib/authlogic/session/scopes.rb:79:in `initialize'
+  authlogic (2.1.5) lib/authlogic/session/persistence.rb:37:in `new'
+  authlogic (2.1.5) lib/authlogic/session/persistence.rb:37:in `find'
+  app/controllers/application_controller.rb:11:in `current_user_session'
+  app/controllers/application_controller.rb:16:in `current_user'
+  app/controllers/application_controller.rb:20:in `require_user'
+
+Rendered rescues/_trace (61.2ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-30 15:17:31) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+
+NameError (undefined local variable or method `my_value' for #<Class:0x253a050>):
+  app/models/user.rb:3
+  authlogic (2.1.5) lib/authlogic/acts_as_authentic/base.rb:33:in `acts_as_authentic'
+  app/models/user.rb:2
+  authlogic (2.1.5) lib/authlogic/session/klass.rb:33:in `klass'
+  authlogic (2.1.5) lib/authlogic/session/password.rb:90:in `login_field'
+  authlogic (2.1.5) lib/authlogic/session/password.rb:213:in `login_field'
+  authlogic (2.1.5) lib/authlogic/session/password.rb:118:in `initialize'
+  authlogic (2.1.5) lib/authlogic/session/activation.rb:48:in `initialize'
+  authlogic (2.1.5) lib/authlogic/session/klass.rb:64:in `initialize'
+  authlogic (2.1.5) lib/authlogic/session/scopes.rb:79:in `initialize'
+  authlogic (2.1.5) lib/authlogic/session/persistence.rb:37:in `new'
+  authlogic (2.1.5) lib/authlogic/session/persistence.rb:37:in `find'
+  app/controllers/application_controller.rb:11:in `current_user_session'
+  app/controllers/application_controller.rb:16:in `current_user'
+  app/controllers/application_controller.rb:29:in `require_no_user'
+
+Rendered rescues/_trace (58.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-30 15:18:21) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering users/new
+Rendered users/_form (2.4ms)
+Completed in 113ms (View: 26, DB: 0) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-30 15:18:42) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering users/new
+Rendered users/_form (1.6ms)
+Completed in 25ms (View: 9, DB: 0) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-06-30 15:18:45) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+
+ActionController::UnknownAction (No action responded to index. Actions: create, edit, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-30 15:19:17) [GET]
+
+ActionController::RoutingError (No route matches "/login" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-06-30 15:20:21) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering user_sessions/new
+Completed in 36ms (View: 20, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-06-30 15:20:29) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"[FILTERED]", "login"=>"keith", "remember_me"=>"0"}, "action"=>"create", "authenticity_token"=>"AZqR7LnsHW/rQxWsoEE6WeRmGOW/vUZgNZ1PL/gv3vM=", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = E'keith') LIMIT 1[0m
+Rendering user_sessions/new
+Completed in 266ms (View: 6, DB: 1) | 200 OK [http://localhost/user_session]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-30 15:20:55) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering users/new
+Rendered users/_form (2.4ms)
+Completed in 35ms (View: 16, DB: 0) | 200 OK [http://localhost/users/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-06-30 15:21:04) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"keith"}, "commit"=>"Register", "action"=>"create", "authenticity_token"=>"AZqR7LnsHW/rQxWsoEE6WeRmGOW/vUZgNZ1PL/gv3vM=", "controller"=>"users"}
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = E'keith') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = E'3e8a2c0fb312d98e290c154fe06ec90b9e9846a92e9f4f6eb58517ef0b2e4c7911c6a4897e226ec5197d94723fc137f6cb9887bca884e81eeb11c15482886a56') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+Rendering users/new
+Rendered users/_form (1.7ms)
+Completed in 74ms (View: 7, DB: 2) | 200 OK [http://localhost/account]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-06-30 15:21:18) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"keith@keith.com"}, "commit"=>"Register", "action"=>"create", "authenticity_token"=>"AZqR7LnsHW/rQxWsoEE6WeRmGOW/vUZgNZ1PL/gv3vM=", "controller"=>"users"}
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = E'keith@keith.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = E'03aa92c3d60bf4795ba0f33048e75e00475fe4cc0e89545f7266d36436b14c22aaeea44ebc9f23345138e61cac8bceac41615fb3e78723b7651e86483ff8ca49') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m
+Rendering users/new
+Rendered users/_form (2.0ms)
+Completed in 31ms (View: 7, DB: 2) | 200 OK [http://localhost/account]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-06-30 15:24:12) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"keith@keith.com"}, "commit"=>"Register", "action"=>"create", "authenticity_token"=>"AZqR7LnsHW/rQxWsoEE6WeRmGOW/vUZgNZ1PL/gv3vM=", "controller"=>"users"}
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = E'keith@keith.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = E'b5287c94ac064bd1940242c0598909f9931688cc9402ab619af532d4a778ed22307d54277043fd40c666afe632eb46784d508e730b2b2d736dba5028f6bc969a') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+Rendering users/new
+Rendered users/_form (6.1ms)
+Completed in 125ms (View: 15, DB: 2) | 200 OK [http://localhost/account]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-06-30 15:24:21) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"keith", "email"=>"keith@keith.com"}, "commit"=>"Register", "action"=>"create", "authenticity_token"=>"AZqR7LnsHW/rQxWsoEE6WeRmGOW/vUZgNZ1PL/gv3vM=", "controller"=>"users"}
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'keith@keith.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = E'keith') LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = E'3811dd122ba5ebccbd09df6d37bfed299d3694e37ed0e1c6d6f7a6961e857c5864bb9aeb65a6efa9a0e50e215bf4b95f4b374545588d46841501d79a242653e5') LIMIT 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO "users" ("updated_at", "crypted_password", "password_salt", "persistence_token", "login", "email", "created_at") VALUES('2010-06-30 07:24:21.639733', E'64320187bf6a84de53e0d627375a9cff1a5387b1737477f7152826c26f964b6f2f3130de5f2f04481874e19703d11167e91416a625a4737b518870c9db9c00fb', E'XY5RThQ7pyU6dOblHTLF', E'3811dd122ba5ebccbd09df6d37bfed299d3694e37ed0e1c6d6f7a6961e857c5864bb9aeb65a6efa9a0e50e215bf4b95f4b374545588d46841501d79a242653e5', E'keith', E'keith@keith.com', '2010-06-30 07:24:21.639733') RETURNING "id"[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/account
+Completed in 36ms (DB: 4) | 302 Found [http://localhost/account]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-30 15:24:21) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'3811dd122ba5ebccbd09df6d37bfed299d3694e37ed0e1c6d6f7a6961e857c5864bb9aeb65a6efa9a0e50e215bf4b95f4b374545588d46841501d79a242653e5') LIMIT 1[0m
+
+NoMethodError (undefined method `logged_out?' for #<User:0x251c078>):
+  authlogic (2.1.5) lib/authlogic/session/timeout.rb:61:in `stale?'
+  authlogic (2.1.5) lib/authlogic/session/timeout.rb:70:in `enforce_timeout'
+  authlogic (2.1.5) lib/authlogic/session/callbacks.rb:83:in `after_persisting'
+  authlogic (2.1.5) lib/authlogic/session/persistence.rb:59:in `persisting?'
+  authlogic (2.1.5) lib/authlogic/session/persistence.rb:39:in `find'
+  app/controllers/application_controller.rb:11:in `current_user_session'
+  app/controllers/application_controller.rb:16:in `current_user'
+  app/controllers/application_controller.rb:20:in `require_user'
+
+Rendered rescues/_trace (54.1ms)
+Rendered rescues/_request_and_response (1.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-30 15:28:24) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'3811dd122ba5ebccbd09df6d37bfed299d3694e37ed0e1c6d6f7a6961e857c5864bb9aeb65a6efa9a0e50e215bf4b95f4b374545588d46841501d79a242653e5') LIMIT 1[0m
+
+NoMethodError (undefined method `logged_out?' for #<User:0x23d9490>):
+  authlogic (2.1.5) lib/authlogic/session/timeout.rb:61:in `stale?'
+  authlogic (2.1.5) lib/authlogic/session/timeout.rb:70:in `enforce_timeout'
+  authlogic (2.1.5) lib/authlogic/session/callbacks.rb:83:in `after_persisting'
+  authlogic (2.1.5) lib/authlogic/session/persistence.rb:59:in `persisting?'
+  authlogic (2.1.5) lib/authlogic/session/persistence.rb:39:in `find'
+  app/controllers/application_controller.rb:11:in `current_user_session'
+  app/controllers/application_controller.rb:16:in `current_user'
+  app/controllers/application_controller.rb:20:in `require_user'
+
+Rendered rescues/_trace (125.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-06-30 15:28:29) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'3811dd122ba5ebccbd09df6d37bfed299d3694e37ed0e1c6d6f7a6961e857c5864bb9aeb65a6efa9a0e50e215bf4b95f4b374545588d46841501d79a242653e5') LIMIT 1[0m
+
+NoMethodError (undefined method `logged_out?' for #<User:0x25542e8>):
+  authlogic (2.1.5) lib/authlogic/session/timeout.rb:61:in `stale?'
+  authlogic (2.1.5) lib/authlogic/session/timeout.rb:70:in `enforce_timeout'
+  authlogic (2.1.5) lib/authlogic/session/callbacks.rb:83:in `after_persisting'
+  authlogic (2.1.5) lib/authlogic/session/persistence.rb:59:in `persisting?'
+  authlogic (2.1.5) lib/authlogic/session/persistence.rb:39:in `find'
+  app/controllers/application_controller.rb:11:in `current_user_session'
+  app/controllers/application_controller.rb:16:in `current_user'
+  app/controllers/application_controller.rb:29:in `require_no_user'
+
+Rendered rescues/_trace (44.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-30 15:28:34) [GET]
+
+ActionController::RoutingError (No route matches "/login" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-30 15:28:38) [GET]
+
+ActionController::RoutingError (No route matches "/new" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-06-30 15:28:40) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'3811dd122ba5ebccbd09df6d37bfed299d3694e37ed0e1c6d6f7a6961e857c5864bb9aeb65a6efa9a0e50e215bf4b95f4b374545588d46841501d79a242653e5') LIMIT 1[0m
+
+NoMethodError (undefined method `logged_out?' for #<User:0x23d8400>):
+  authlogic (2.1.5) lib/authlogic/session/timeout.rb:61:in `stale?'
+  authlogic (2.1.5) lib/authlogic/session/timeout.rb:70:in `enforce_timeout'
+  authlogic (2.1.5) lib/authlogic/session/callbacks.rb:83:in `after_persisting'
+  authlogic (2.1.5) lib/authlogic/session/persistence.rb:59:in `persisting?'
+  authlogic (2.1.5) lib/authlogic/session/persistence.rb:39:in `find'
+  app/controllers/application_controller.rb:11:in `current_user_session'
+  app/controllers/application_controller.rb:16:in `current_user'
+  app/controllers/application_controller.rb:29:in `require_no_user'
+
+Rendered rescues/_trace (127.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-06-30 15:30:27) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'3811dd122ba5ebccbd09df6d37bfed299d3694e37ed0e1c6d6f7a6961e857c5864bb9aeb65a6efa9a0e50e215bf4b95f4b374545588d46841501d79a242653e5') LIMIT 1[0m
+
+NoMethodError (undefined method `logged_out?' for #<User:0x171af10>):
+  authlogic (2.1.5) lib/authlogic/session/timeout.rb:61:in `stale?'
+  authlogic (2.1.5) lib/authlogic/session/timeout.rb:70:in `enforce_timeout'
+  authlogic (2.1.5) lib/authlogic/session/callbacks.rb:83:in `after_persisting'
+  authlogic (2.1.5) lib/authlogic/session/persistence.rb:59:in `persisting?'
+  authlogic (2.1.5) lib/authlogic/session/persistence.rb:39:in `find'
+  app/controllers/application_controller.rb:11:in `current_user_session'
+  app/controllers/application_controller.rb:16:in `current_user'
+  app/controllers/application_controller.rb:29:in `require_no_user'
+
+Rendered rescues/_trace (97.4ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-06-30 15:30:36) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'3811dd122ba5ebccbd09df6d37bfed299d3694e37ed0e1c6d6f7a6961e857c5864bb9aeb65a6efa9a0e50e215bf4b95f4b374545588d46841501d79a242653e5') LIMIT 1[0m
+
+NoMethodError (undefined method `logged_out?' for #<User:0x25d90c4>):
+  authlogic (2.1.5) lib/authlogic/session/timeout.rb:61:in `stale?'
+  authlogic (2.1.5) lib/authlogic/session/timeout.rb:70:in `enforce_timeout'
+  authlogic (2.1.5) lib/authlogic/session/callbacks.rb:83:in `after_persisting'
+  authlogic (2.1.5) lib/authlogic/session/persistence.rb:59:in `persisting?'
+  authlogic (2.1.5) lib/authlogic/session/persistence.rb:39:in `find'
+  app/controllers/application_controller.rb:11:in `current_user_session'
+  app/controllers/application_controller.rb:16:in `current_user'
+  app/controllers/application_controller.rb:29:in `require_no_user'
+
+Rendered rescues/_trace (47.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-30 15:30:38) [GET]
+
+ActionController::RoutingError (No route matches "/index" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-30 15:30:42) [GET]
+
+ActionController::RoutingError (No route matches "/new" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-30 15:30:47) [GET]
+
+ActionController::RoutingError (No route matches "/login" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#show (for 127.0.0.1 at 2010-06-30 15:30:52) [GET]
+  Parameters: {"action"=>"show", "controller"=>"user_sessions"}
+
+ActionController::UnknownAction (No action responded to show. Actions: create, destroy, and new):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-06-30 15:30:55) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'3811dd122ba5ebccbd09df6d37bfed299d3694e37ed0e1c6d6f7a6961e857c5864bb9aeb65a6efa9a0e50e215bf4b95f4b374545588d46841501d79a242653e5') LIMIT 1[0m
+
+NoMethodError (undefined method `logged_out?' for #<User:0x2412588>):
+  authlogic (2.1.5) lib/authlogic/session/timeout.rb:61:in `stale?'
+  authlogic (2.1.5) lib/authlogic/session/timeout.rb:70:in `enforce_timeout'
+  authlogic (2.1.5) lib/authlogic/session/callbacks.rb:83:in `after_persisting'
+  authlogic (2.1.5) lib/authlogic/session/persistence.rb:59:in `persisting?'
+  authlogic (2.1.5) lib/authlogic/session/persistence.rb:39:in `find'
+  app/controllers/application_controller.rb:11:in `current_user_session'
+  app/controllers/application_controller.rb:16:in `current_user'
+  app/controllers/application_controller.rb:29:in `require_no_user'
+
+Rendered rescues/_trace (45.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100630065446)
+Migrating to AddLastRequestAtToUsers (20100630073514)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mALTER TABLE "users" ADD COLUMN "last_request_at" timestamp[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100630073514')[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-06-30 15:35:58) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'3811dd122ba5ebccbd09df6d37bfed299d3694e37ed0e1c6d6f7a6961e857c5864bb9aeb65a6efa9a0e50e215bf4b95f4b374545588d46841501d79a242653e5') LIMIT 1[0m
+
+NoMethodError (undefined method `use' for #<UserSession: {:unauthorized_record=>"<protected>"}>):
+  app/controllers/application_controller.rb:16:in `current_user'
+  app/controllers/application_controller.rb:29:in `require_no_user'
+
+Rendered rescues/_trace (92.9ms)
+Rendered rescues/_request_and_response (1.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-06-30 15:38:21) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'3811dd122ba5ebccbd09df6d37bfed299d3694e37ed0e1c6d6f7a6961e857c5864bb9aeb65a6efa9a0e50e215bf4b95f4b374545588d46841501d79a242653e5') LIMIT 1[0m
+
+NoMethodError (undefined method `use' for #<UserSession: {:unauthorized_record=>"<protected>"}>):
+  app/controllers/application_controller.rb:15:in `current_user'
+  app/controllers/application_controller.rb:28:in `require_no_user'
+
+Rendered rescues/_trace (91.3ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-06-30 15:43:13) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'3811dd122ba5ebccbd09df6d37bfed299d3694e37ed0e1c6d6f7a6961e857c5864bb9aeb65a6efa9a0e50e215bf4b95f4b374545588d46841501d79a242653e5') LIMIT 1[0m
+
+NoMethodError (undefined method `use' for #<UserSession: {:unauthorized_record=>"<protected>"}>):
+  app/controllers/application_controller.rb:15:in `current_user'
+  app/controllers/application_controller.rb:28:in `require_no_user'
+
+Rendered rescues/_trace (92.0ms)
+Rendered rescues/_request_and_response (1.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-06-30 15:49:06) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'3811dd122ba5ebccbd09df6d37bfed299d3694e37ed0e1c6d6f7a6961e857c5864bb9aeb65a6efa9a0e50e215bf4b95f4b374545588d46841501d79a242653e5') LIMIT 1[0m
+Rendering user_sessions/new
+Completed in 40ms (View: 21, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-06-30 15:51:42) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'3811dd122ba5ebccbd09df6d37bfed299d3694e37ed0e1c6d6f7a6961e857c5864bb9aeb65a6efa9a0e50e215bf4b95f4b374545588d46841501d79a242653e5') LIMIT 1[0m
+Rendering user_sessions/new
+
+ActionView::TemplateError (undefined local variable or method `users' for #<ActionView::Base:0x259543c>) on line #13 of app/views/user_sessions/new.html.erb:
+10:   <br />
+11:   <%= f.check_box :remember_me %><%= f.label :remember_me %><br />
+12:   <br />
+13:   <%= f.submit "Login" %> Or <%= link_to('click here to register', :controller => users, :action => new) %>
+14: <% end %>
+
+    app/views/user_sessions/new.html.erb:13
+    app/views/user_sessions/new.html.erb:3
+
+Rendered rescues/_trace (50.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-06-30 15:52:43) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'3811dd122ba5ebccbd09df6d37bfed299d3694e37ed0e1c6d6f7a6961e857c5864bb9aeb65a6efa9a0e50e215bf4b95f4b374545588d46841501d79a242653e5') LIMIT 1[0m
+Rendering user_sessions/new
+Completed in 98ms (View: 10, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-30 15:52:46) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'3811dd122ba5ebccbd09df6d37bfed299d3694e37ed0e1c6d6f7a6961e857c5864bb9aeb65a6efa9a0e50e215bf4b95f4b374545588d46841501d79a242653e5') LIMIT 1[0m
+Rendering users/new
+Rendered users/_form (3.0ms)
+Completed in 35ms (View: 15, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-06-30 15:52:54) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"keith", "email"=>"keith.chin@docomointertouch.com"}, "commit"=>"Register", "action"=>"create", "authenticity_token"=>"AZqR7LnsHW/rQxWsoEE6WeRmGOW/vUZgNZ1PL/gv3vM=", "controller"=>"users"}
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'3811dd122ba5ebccbd09df6d37bfed299d3694e37ed0e1c6d6f7a6961e857c5864bb9aeb65a6efa9a0e50e215bf4b95f4b374545588d46841501d79a242653e5') LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'keith.chin@docomointertouch.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = E'keith') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = E'daf677855cca673d55427168209580e49da2d88df1b6dc71c957a1f4d69e9094e61fb7500b7b60fa18241dcb1be130645232bd60e3bcebabaf8e6dc16c2b2052') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'3811dd122ba5ebccbd09df6d37bfed299d3694e37ed0e1c6d6f7a6961e857c5864bb9aeb65a6efa9a0e50e215bf4b95f4b374545588d46841501d79a242653e5') LIMIT 1[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO "users" ("updated_at", "last_request_at", "crypted_password", "password_salt", "persistence_token", "login", "email", "created_at") VALUES('2010-06-30 07:52:55.239362', '2010-06-30 07:52:55.078909', E'843592b5dd1dd849f2e46bd53b5bb1f704d9a8bf65e8f9549f4685521f3476ce3c4b96903ab803af9ce7714cf440a5b6c34716960a179ae514a93f06f428cb49', E'BakSVAdd6SJ_IEuk572Q', E'daf677855cca673d55427168209580e49da2d88df1b6dc71c957a1f4d69e9094e61fb7500b7b60fa18241dcb1be130645232bd60e3bcebabaf8e6dc16c2b2052', E'keith', E'keith.chin@docomointertouch.com', '2010-06-30 07:52:55.239362') RETURNING "id"[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/account
+Completed in 391ms (DB: 6) | 302 Found [http://localhost/account]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-30 15:52:55) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'daf677855cca673d55427168209580e49da2d88df1b6dc71c957a1f4d69e9094e61fb7500b7b60fa18241dcb1be130645232bd60e3bcebabaf8e6dc16c2b2052') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.9ms)[0m   [0mUPDATE "users" SET "last_request_at" = '2010-06-30 07:52:55.306460', "updated_at" = '2010-06-30 07:52:55.307105' WHERE "id" = 2[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+
+NoMethodError (undefined method `use' for #<UserSession: {:unauthorized_record=>"<protected>"}>):
+  app/controllers/application_controller.rb:15:in `current_user'
+  app/controllers/application_controller.rb:19:in `require_user'
+
+Rendered rescues/_trace (38.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-06-30 15:53:05) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'daf677855cca673d55427168209580e49da2d88df1b6dc71c957a1f4d69e9094e61fb7500b7b60fa18241dcb1be130645232bd60e3bcebabaf8e6dc16c2b2052') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.7ms)[0m   [0mUPDATE "users" SET "last_request_at" = '2010-06-30 07:53:05.295145', "updated_at" = '2010-06-30 07:53:05.295781' WHERE "id" = 2[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+
+NoMethodError (undefined method `use' for #<UserSession: {:unauthorized_record=>"<protected>"}>):
+  app/controllers/application_controller.rb:15:in `current_user'
+  app/controllers/application_controller.rb:28:in `require_no_user'
+
+Rendered rescues/_trace (116.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-06-30 15:53:47) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'daf677855cca673d55427168209580e49da2d88df1b6dc71c957a1f4d69e9094e61fb7500b7b60fa18241dcb1be130645232bd60e3bcebabaf8e6dc16c2b2052') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.7ms)[0m   [0;1mUPDATE "users" SET "last_request_at" = '2010-06-30 07:53:47.973007', "updated_at" = '2010-06-30 07:53:47.973757' WHERE "id" = 2[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+
+NoMethodError (undefined method `use' for #<UserSession: {:unauthorized_record=>"<protected>"}>):
+  app/controllers/application_controller.rb:15:in `current_user'
+  app/controllers/application_controller.rb:28:in `require_no_user'
+
+Rendered rescues/_trace (40.5ms)
+Rendered rescues/_request_and_response (1.9ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-06-30 15:53:56) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'daf677855cca673d55427168209580e49da2d88df1b6dc71c957a1f4d69e9094e61fb7500b7b60fa18241dcb1be130645232bd60e3bcebabaf8e6dc16c2b2052') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+Rendering user_sessions/new
+Completed in 33ms (View: 10, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-30 15:53:58) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'daf677855cca673d55427168209580e49da2d88df1b6dc71c957a1f4d69e9094e61fb7500b7b60fa18241dcb1be130645232bd60e3bcebabaf8e6dc16c2b2052') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+Rendering users/new
+Rendered users/_form (3.1ms)
+Completed in 42ms (View: 18, DB: 2) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-06-30 15:54:06) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"keith", "email"=>"keith.chin@docomointertouch.com"}, "commit"=>"Register", "action"=>"create", "authenticity_token"=>"AZqR7LnsHW/rQxWsoEE6WeRmGOW/vUZgNZ1PL/gv3vM=", "controller"=>"users"}
+  [4;36;1mUser Load (1.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'daf677855cca673d55427168209580e49da2d88df1b6dc71c957a1f4d69e9094e61fb7500b7b60fa18241dcb1be130645232bd60e3bcebabaf8e6dc16c2b2052') LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'keith.chin@docomointertouch.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = E'keith') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = E'dfaf9c743ca391aab5e4a24e1d6d604619fc3db90edcd67a665db63c31c737666547013fcae0809c619dfe8079971e006c916a44f77c20ce64654ace18073d0b') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'daf677855cca673d55427168209580e49da2d88df1b6dc71c957a1f4d69e9094e61fb7500b7b60fa18241dcb1be130645232bd60e3bcebabaf8e6dc16c2b2052') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO "users" ("updated_at", "last_request_at", "crypted_password", "password_salt", "persistence_token", "login", "email", "created_at") VALUES('2010-06-30 07:54:06.543535', '2010-06-30 07:54:06.542950', E'b50dc5c23a82592696c3c29c5aed0de2701e430a824a2bd74502202331d672da1e326dec8a7f77db906ee4b8135d906b6b5069cefaf825f132b1713a023f6837', E'V6ipYoTtkr_Kc5TB66ZC', E'dfaf9c743ca391aab5e4a24e1d6d604619fc3db90edcd67a665db63c31c737666547013fcae0809c619dfe8079971e006c916a44f77c20ce64654ace18073d0b', E'keith', E'keith.chin@docomointertouch.com', '2010-06-30 07:54:06.543535') RETURNING "id"[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/account
+Completed in 266ms (DB: 5) | 302 Found [http://localhost/account]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-30 15:54:06) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'dfaf9c743ca391aab5e4a24e1d6d604619fc3db90edcd67a665db63c31c737666547013fcae0809c619dfe8079971e006c916a44f77c20ce64654ace18073d0b') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE "users" SET "last_request_at" = '2010-06-30 07:54:06.612196', "updated_at" = '2010-06-30 07:54:06.612784' WHERE "id" = 3[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+
+NoMethodError (undefined method `use' for #<UserSession: {:unauthorized_record=>"<protected>"}>):
+  app/controllers/application_controller.rb:15:in `current_user'
+  app/controllers/application_controller.rb:19:in `require_user'
+
+Rendered rescues/_trace (40.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-30 15:56:21) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'dfaf9c743ca391aab5e4a24e1d6d604619fc3db90edcd67a665db63c31c737666547013fcae0809c619dfe8079971e006c916a44f77c20ce64654ace18073d0b') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE "users" SET "last_request_at" = '2010-06-30 07:56:21.701059', "updated_at" = '2010-06-30 07:56:21.701749' WHERE "id" = 3[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+Rendering users/show
+
+ActionView::TemplateError (undefined method `login_count' for #<User:0x2611e38>) on line #8 of app/views/users/show.html.erb:
+5: 
+6: <p>
+7:   <b>Login count:</b>
+8:   <%=h @user.login_count %>
+9: </p>
+10: 
+11: <p>
+
+    app/views/users/show.html.erb:8
+
+Rendered rescues/_trace (43.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100630065446)
+Migrating to AddLastRequestAtToUsers (20100630073514)
+Migrating to AddLoginCountToUsers (20100630075718)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mALTER TABLE "users" ADD COLUMN "login_count" integer[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100630075718')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-30 15:57:26) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'dfaf9c743ca391aab5e4a24e1d6d604619fc3db90edcd67a665db63c31c737666547013fcae0809c619dfe8079971e006c916a44f77c20ce64654ace18073d0b') LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE "users" SET "last_request_at" = '2010-06-30 07:57:26.912077', "updated_at" = '2010-06-30 07:57:26.912925' WHERE "id" = 3[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+Rendering users/show
+
+ActionView::TemplateError (undefined method `last_login_at' for #<User:0x2446234>) on line #18 of app/views/users/show.html.erb:
+15: 
+16: <p>
+17:   <b>Last login at:</b>
+18:   <%=h @user.last_login_at %>
+19: </p>
+20: 
+21: <p>
+
+    app/views/users/show.html.erb:18
+
+Rendered rescues/_trace (129.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100630065446)
+Migrating to AddLastRequestAtToUsers (20100630073514)
+Migrating to AddLoginCountToUsers (20100630075718)
+Migrating to AddLastLoginAtToUsers (20100630075753)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mALTER TABLE "users" ADD COLUMN "last_login_at" timestamp[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100630075753')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-30 15:57:59) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'dfaf9c743ca391aab5e4a24e1d6d604619fc3db90edcd67a665db63c31c737666547013fcae0809c619dfe8079971e006c916a44f77c20ce64654ace18073d0b') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE "users" SET "last_request_at" = '2010-06-30 07:57:59.799348', "updated_at" = '2010-06-30 07:57:59.799961' WHERE "id" = 3[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+Rendering users/show
+
+ActionView::TemplateError (undefined method `current_login_at' for #<User:0x259232c>) on line #23 of app/views/users/show.html.erb:
+20: 
+21: <p>
+22:   <b>Current login at:</b>
+23:   <%=h @user.current_login_at %>
+24: </p>
+25: 
+26: <p>
+
+    app/views/users/show.html.erb:23
+
+Rendered rescues/_trace (45.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100630065446)
+Migrating to AddLastRequestAtToUsers (20100630073514)
+Migrating to AddLoginCountToUsers (20100630075718)
+Migrating to AddLastLoginAtToUsers (20100630075753)
+Migrating to AddCurrentLoginAtToUsers (20100630075813)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mALTER TABLE "users" ADD COLUMN "current_login_at" timestamp[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100630075813')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-30 15:58:18) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'dfaf9c743ca391aab5e4a24e1d6d604619fc3db90edcd67a665db63c31c737666547013fcae0809c619dfe8079971e006c916a44f77c20ce64654ace18073d0b') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE "users" SET "last_request_at" = '2010-06-30 07:58:18.107099', "updated_at" = '2010-06-30 07:58:18.107745' WHERE "id" = 3[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+Rendering users/show
+
+ActionView::TemplateError (undefined method `last_login_ip' for #<User:0x2427d20>) on line #28 of app/views/users/show.html.erb:
+25: 
+26: <p>
+27:   <b>Last login ip:</b>
+28:   <%=h @user.last_login_ip %>
+29: </p>
+30: 
+31: <p>
+
+    app/views/users/show.html.erb:28
+
+Rendered rescues/_trace (125.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100630065446)
+Migrating to AddLastRequestAtToUsers (20100630073514)
+Migrating to AddLoginCountToUsers (20100630075718)
+Migrating to AddLastLoginAtToUsers (20100630075753)
+Migrating to AddCurrentLoginAtToUsers (20100630075813)
+Migrating to AddLastLoginIpToUsers (20100630075856)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mALTER TABLE "users" ADD COLUMN "last_login_ip" character varying(255)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100630075856')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-30 15:59:00) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'dfaf9c743ca391aab5e4a24e1d6d604619fc3db90edcd67a665db63c31c737666547013fcae0809c619dfe8079971e006c916a44f77c20ce64654ace18073d0b') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "last_request_at" = '2010-06-30 07:59:00.120938', "updated_at" = '2010-06-30 07:59:00.121586' WHERE "id" = 3[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+Rendering users/show
+
+ActionView::TemplateError (undefined method `current_login_ip' for #<User:0x2567014>) on line #33 of app/views/users/show.html.erb:
+30: 
+31: <p>
+32:   <b>Current login ip:</b>
+33:   <%=h @user.current_login_ip %>
+34: </p>
+35: 
+36: 
+
+    app/views/users/show.html.erb:33
+
+Rendered rescues/_trace (44.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100630065446)
+Migrating to AddLastRequestAtToUsers (20100630073514)
+Migrating to AddLoginCountToUsers (20100630075718)
+Migrating to AddLastLoginAtToUsers (20100630075753)
+Migrating to AddCurrentLoginAtToUsers (20100630075813)
+Migrating to AddLastLoginIpToUsers (20100630075856)
+Migrating to AddCurrentLoginIpToUsers (20100630075918)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mALTER TABLE "users" ADD COLUMN "current_login_ip" character varying(255)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100630075918')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-30 15:59:22) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'dfaf9c743ca391aab5e4a24e1d6d604619fc3db90edcd67a665db63c31c737666547013fcae0809c619dfe8079971e006c916a44f77c20ce64654ace18073d0b') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "last_request_at" = '2010-06-30 07:59:22.453088', "updated_at" = '2010-06-30 07:59:22.453663' WHERE "id" = 3[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+Rendering users/show
+Completed in 27ms (View: 1, DB: 3) | 200 OK [http://localhost/account]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-06-30 15:59:26) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'dfaf9c743ca391aab5e4a24e1d6d604619fc3db90edcd67a665db63c31c737666547013fcae0809c619dfe8079971e006c916a44f77c20ce64654ace18073d0b') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE "users" SET "last_request_at" = '2010-06-30 07:59:26.895369', "updated_at" = '2010-06-30 07:59:26.896089' WHERE "id" = 3[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+Rendering users/edit
+Rendered users/_form (2.3ms)
+Completed in 38ms (View: 11, DB: 3) | 200 OK [http://localhost/account/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-06-30 15:59:31) [PUT]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"keith", "email"=>"keith.chin@docomointertouch.com"}, "commit"=>"Update", "action"=>"update", "_method"=>"put", "authenticity_token"=>"AZqR7LnsHW/rQxWsoEE6WeRmGOW/vUZgNZ1PL/gv3vM=", "controller"=>"users"}
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'dfaf9c743ca391aab5e4a24e1d6d604619fc3db90edcd67a665db63c31c737666547013fcae0809c619dfe8079971e006c916a44f77c20ce64654ace18073d0b') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (2.2ms)[0m   [0;1mUPDATE "users" SET "last_request_at" = '2010-06-30 07:59:31.886234', "updated_at" = '2010-06-30 07:59:31.887131' WHERE "id" = 3[0m
+  [4;35;1mSQL (2.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = E'b3b34e6eb0465c043a351fc12e2d721b552319b375c7792f52c070c04f298d4b229ea0d464038645a0e7df32e170452d0c4b63163075291bf6b5c9ea2f7fcbce' AND "users".id <> 3) LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'dfaf9c743ca391aab5e4a24e1d6d604619fc3db90edcd67a665db63c31c737666547013fcae0809c619dfe8079971e006c916a44f77c20ce64654ace18073d0b') LIMIT 1[0m
+  [4;35;1mUser Update (2.1ms)[0m   [0mUPDATE "users" SET "login_count" = 1, "persistence_token" = E'b3b34e6eb0465c043a351fc12e2d721b552319b375c7792f52c070c04f298d4b229ea0d464038645a0e7df32e170452d0c4b63163075291bf6b5c9ea2f7fcbce', "current_login_ip" = E'127.0.0.1', "last_request_at" = '2010-06-30 07:59:31.903329', "crypted_password" = E'478133696f0d5e4479172008934a42be5036e6d9cd4abd2c07315432ce77e515d6537d57b0fedc0a0d6edfdf500c87f057c2175deaf6c2ee2004ba47a7fd72af', "updated_at" = '2010-06-30 07:59:31.904017', "current_login_at" = '2010-06-30 07:59:31.902966', "password_salt" = E'BM8yBGSzgXcnwE_CA6yj' WHERE "id" = 3[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/account
+Completed in 154ms (DB: 12) | 302 Found [http://localhost/account]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-30 15:59:31) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = E'3') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE "users" SET "last_request_at" = '2010-06-30 07:59:31.960922', "updated_at" = '2010-06-30 07:59:31.961622' WHERE "id" = 3[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCOMMIT[0m
+Rendering users/show
+Completed in 34ms (View: 2, DB: 3) | 200 OK [http://localhost/account]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-06-30 15:59:40) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = E'3') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "last_request_at" = '2010-06-30 07:59:40.955511', "updated_at" = '2010-06-30 07:59:40.956268' WHERE "id" = 3[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/account
+Filter chain halted as [:require_no_user] rendered_or_redirected.
+Completed in 28ms (DB: 3) | 302 Found [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-30 15:59:40) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = E'3') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "last_request_at" = '2010-06-30 07:59:41.003519', "updated_at" = '2010-06-30 07:59:41.004144' WHERE "id" = 3[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+Rendering users/show
+Completed in 28ms (View: 2, DB: 3) | 200 OK [http://localhost/account]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-30 16:01:02) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;35;1mUser Load (1.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = E'3') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "last_request_at" = '2010-06-30 08:01:02.100944', "updated_at" = '2010-06-30 08:01:02.101509' WHERE "id" = 3[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+Rendering users/show
+Completed in 27ms (View: 1, DB: 3) | 200 OK [http://localhost/account]
+  [4;35;1mSQL (2.6ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-30 16:02:44) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = E'3') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "last_request_at" = '2010-06-30 08:02:44.445560', "updated_at" = '2010-06-30 08:02:44.446140' WHERE "id" = 3[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+Rendering users/show
+
+ActionView::TemplateError (undefined local variable or method `logout_path' for #<ActionView::Base:0x244440c>) on line #38 of app/views/users/show.html.erb:
+35: 
+36: 
+37: <%= link_to 'Edit', edit_account_path %> |
+38: <%= link_to 'Logout', logout_path %>
+
+    app/views/users/show.html.erb:38
+
+Rendered rescues/_trace (120.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-30 16:03:06) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = E'3') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "last_request_at" = '2010-06-30 08:03:06.521461', "updated_at" = '2010-06-30 08:03:06.522098' WHERE "id" = 3[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+Rendering users/show
+Completed in 32ms (View: 6, DB: 3) | 200 OK [http://localhost/account]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-30 16:08:15) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = E'3') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE "users" SET "last_request_at" = '2010-06-30 08:08:15.417416', "updated_at" = '2010-06-30 08:08:15.418261' WHERE "id" = 3[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+Rendering users/show
+Completed in 152ms (View: 7, DB: 3) | 200 OK [http://localhost/account]
+  [4;36;1mSQL (1.8ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-06-30 16:08:20) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = E'3') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "last_request_at" = '2010-06-30 08:08:20.545352', "updated_at" = '2010-06-30 08:08:20.545940' WHERE "id" = 3[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/account
+Filter chain halted as [:require_no_user] rendered_or_redirected.
+Completed in 25ms (DB: 4) | 302 Found [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-30 16:08:20) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Load (1.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = E'3') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "last_request_at" = '2010-06-30 08:08:20.595982', "updated_at" = '2010-06-30 08:08:20.596731' WHERE "id" = 3[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+Rendering users/show
+Completed in 28ms (View: 1, DB: 4) | 200 OK [http://localhost/account]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-30 16:08:57) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = E'3') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "last_request_at" = '2010-06-30 08:08:58.022858', "updated_at" = '2010-06-30 08:08:58.023771' WHERE "id" = 3[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+Rendering users/show
+Completed in 36ms (View: 7, DB: 3) | 200 OK [http://localhost/account]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2010-06-30 16:09:00) [GET]
+  Parameters: {"action"=>"logout", "controller"=>"users"}
+
+NoMethodError (undefined method `destroy' for #<ActionController::Session::AbstractStore::SessionHash:0x25258e4>):
+  app/controllers/users_controller.rb:38:in `logout'
+
+Rendered rescues/_trace (43.4ms)
+Rendered rescues/_request_and_response (1.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2010-06-30 16:10:23) [GET]
+  Parameters: {"action"=>"logout", "controller"=>"users"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.destroy):
+  app/controllers/users_controller.rb:38:in `logout'
+
+Rendered rescues/_trace (108.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2010-06-30 16:12:03) [GET]
+  Parameters: {"action"=>"logout", "controller"=>"users"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = E'3') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "last_request_at" = '2010-06-30 08:12:03.043386', "updated_at" = '2010-06-30 08:12:03.043960' WHERE "id" = 3[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+Rendering users/show
+
+ActionView::TemplateError (undefined method `login' for nil:NilClass) on line #3 of app/views/users/show.html.erb:
+1: <p>
+2:   <b>Login:</b>
+3:   <%=h @user.login %>
+4: </p>
+5: 
+6: <p>
+
+    app/views/users/show.html.erb:3
+    app/controllers/users_controller.rb:39:in `logout'
+
+Rendered rescues/_trace (42.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2010-06-30 16:12:31) [GET]
+  Parameters: {"action"=>"logout", "controller"=>"users"}
+Rendering users/new
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #3 of app/views/users/new.html.erb:
+1: <h1>Register</h1>
+2: 
+3: <% form_for @user, :url => account_path do |f| %>
+4:   <%= f.error_messages %>
+5:   <%= render :partial => "form", :object => f %>
+6:   <%= f.submit "Register" %>
+
+    app/views/users/new.html.erb:3
+    app/controllers/users_controller.rb:39:in `logout'
+
+Rendered rescues/_trace (45.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2010-06-30 16:14:42) [GET]
+  Parameters: {"action"=>"logout", "controller"=>"users"}
+Redirected to http://localhost:3000/user_session/new
+Completed in 17ms (DB: 0) | 302 Found [http://localhost/users/logout]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-06-30 16:14:42) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering user_sessions/new
+Completed in 27ms (View: 10, DB: 0) | 200 OK [http://localhost/user_session/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-30 16:14:44) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering users/new
+Rendered users/_form (2.9ms)
+Completed in 28ms (View: 11, DB: 0) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-06-30 16:14:58) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"darren", "email"=>"darren@darren.com"}, "commit"=>"Register", "action"=>"create", "authenticity_token"=>"AZqR7LnsHW/rQxWsoEE6WeRmGOW/vUZgNZ1PL/gv3vM=", "controller"=>"users"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'darren@darren.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = E'darren') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = E'084f896ce106e2a98e39130be40ae0b2df26ec8ca391884f3c6de29817b83da97add2751813f99092811243eeda58b499a5a6b601444dbb503ed236c44295dbe') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+Rendering users/new
+Rendered users/_form (4.7ms)
+Completed in 215ms (View: 10, DB: 2) | 200 OK [http://localhost/account]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-06-30 16:15:03) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"darren", "email"=>"darren@darren.com"}, "commit"=>"Register", "action"=>"create", "authenticity_token"=>"AZqR7LnsHW/rQxWsoEE6WeRmGOW/vUZgNZ1PL/gv3vM=", "controller"=>"users"}
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'darren@darren.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = E'darren') LIMIT 1[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = E'a6f253d1c30e27411760fb8bbd906efb1558ab3b0870a93da1fc57b60103b44eab260aac1341a8b5fa9e43f5903c4d58df19a7bb86ab7f4a9bc448e45c5c1c1e') LIMIT 1[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mINSERT INTO "users" ("last_login_at", "updated_at", "last_request_at", "crypted_password", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "login", "email", "created_at", "last_login_ip") VALUES(NULL, '2010-06-30 08:15:03.771157', '2010-06-30 08:15:03.770521', E'e94640907f9a7dbbcefca78552a6510a87f6c1a66c2df24668fd71a9b29f30653dee2c2e6c2f9a20e6039aa03aa41ce7ba5aac10d84bd8847a80137148c47277', E'127.0.0.1', E'Hc1CoxrGYyCHvjWdbCU3', '2010-06-30 08:15:03.770346', E'a6f253d1c30e27411760fb8bbd906efb1558ab3b0870a93da1fc57b60103b44eab260aac1341a8b5fa9e43f5903c4d58df19a7bb86ab7f4a9bc448e45c5c1c1e', 1, E'darren', E'darren@darren.com', '2010-06-30 08:15:03.771157', NULL) RETURNING "id"[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 45ms (DB: 5) | 302 Found [http://localhost/account]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-06-30 16:15:03) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'a6f253d1c30e27411760fb8bbd906efb1558ab3b0870a93da1fc57b60103b44eab260aac1341a8b5fa9e43f5903c4d58df19a7bb86ab7f4a9bc448e45c5c1c1e') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE "users" SET "last_request_at" = '2010-06-30 08:15:03.844663', "updated_at" = '2010-06-30 08:15:03.845293' WHERE "id" = 4[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/account
+Filter chain halted as [:require_no_user] rendered_or_redirected.
+Completed in 29ms (DB: 3) | 302 Found [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-30 16:15:03) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'a6f253d1c30e27411760fb8bbd906efb1558ab3b0870a93da1fc57b60103b44eab260aac1341a8b5fa9e43f5903c4d58df19a7bb86ab7f4a9bc448e45c5c1c1e') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.8ms)[0m   [0mUPDATE "users" SET "last_request_at" = '2010-06-30 08:15:03.900962', "updated_at" = '2010-06-30 08:15:03.901546' WHERE "id" = 4[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+Rendering users/show
+Completed in 32ms (View: 1, DB: 3) | 200 OK [http://localhost/account]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2010-06-30 16:15:05) [GET]
+  Parameters: {"action"=>"logout", "controller"=>"users"}
+  [4;35;1mUser Load (1.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = E'a6f253d1c30e27411760fb8bbd906efb1558ab3b0870a93da1fc57b60103b44eab260aac1341a8b5fa9e43f5903c4d58df19a7bb86ab7f4a9bc448e45c5c1c1e') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE "users" SET "last_request_at" = '2010-06-30 08:15:05.713227', "updated_at" = '2010-06-30 08:15:05.713899' WHERE "id" = 4[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/user_session/new
+Completed in 89ms (DB: 3) | 302 Found [http://localhost/users/logout]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-06-30 16:15:05) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering user_sessions/new
+Completed in 24ms (View: 5, DB: 0) | 200 OK [http://localhost/user_session/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-06-30 16:15:10) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"[FILTERED]", "login"=>"darren", "remember_me"=>"0"}, "action"=>"create", "authenticity_token"=>"AZqR7LnsHW/rQxWsoEE6WeRmGOW/vUZgNZ1PL/gv3vM=", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".login) = E'darren') LIMIT 1[0m
+Rendering user_sessions/new
+Completed in 32ms (View: 7, DB: 2) | 200 OK [http://localhost/user_session]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-06-30 16:15:13) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"[FILTERED]", "login"=>"darren", "remember_me"=>"0"}, "action"=>"create", "authenticity_token"=>"AZqR7LnsHW/rQxWsoEE6WeRmGOW/vUZgNZ1PL/gv3vM=", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (1.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = E'darren') LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.7ms)[0m   [0;1mUPDATE "users" SET "login_count" = 2, "last_request_at" = '2010-06-30 08:15:13.812723', "last_login_at" = '2010-06-30 08:15:03.770346', "last_login_ip" = E'127.0.0.1', "updated_at" = '2010-06-30 08:15:13.814237', "current_login_at" = '2010-06-30 08:15:13.812248' WHERE "id" = 4[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 32ms (DB: 4) | 302 Found [http://localhost/user_session]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-06-30 16:15:13) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = E'4') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE "users" SET "last_request_at" = '2010-06-30 08:15:13.866482', "updated_at" = '2010-06-30 08:15:13.867532' WHERE "id" = 4[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/account
+Filter chain halted as [:require_no_user] rendered_or_redirected.
+Completed in 27ms (DB: 4) | 302 Found [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-06-30 16:15:13) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = E'4') LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.7ms)[0m   [0;1mUPDATE "users" SET "last_request_at" = '2010-06-30 08:15:13.936985', "updated_at" = '2010-06-30 08:15:13.937883' WHERE "id" = 4[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCOMMIT[0m
+Rendering users/show
+Completed in 30ms (View: 1, DB: 3) | 200 OK [http://localhost/account]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2010-06-30 16:15:17) [GET]
+  Parameters: {"action"=>"logout", "controller"=>"users"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = E'4') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "last_request_at" = '2010-06-30 08:15:17.163091', "updated_at" = '2010-06-30 08:15:17.163728' WHERE "id" = 4[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/user_session/new
+Completed in 27ms (DB: 3) | 302 Found [http://localhost/users/logout]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-06-30 16:15:17) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering user_sessions/new
+Completed in 101ms (View: 83, DB: 0) | 200 OK [http://localhost/user_session/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-06-30 16:15:21) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"[FILTERED]", "login"=>"keith", "remember_me"=>"0"}, "action"=>"create", "authenticity_token"=>"AZqR7LnsHW/rQxWsoEE6WeRmGOW/vUZgNZ1PL/gv3vM=", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (2.8ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = E'keith') LIMIT 1[0m
+Rendering user_sessions/new
+Completed in 32ms (View: 6, DB: 3) | 200 OK [http://localhost/user_session]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-06-30 16:15:35) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering users/new
+Rendered users/_form (2.0ms)
+Completed in 23ms (View: 7, DB: 0) | 200 OK [http://localhost/users/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-06-30 16:15:36) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"", "email"=>""}, "commit"=>"Register", "action"=>"create", "authenticity_token"=>"AZqR7LnsHW/rQxWsoEE6WeRmGOW/vUZgNZ1PL/gv3vM=", "controller"=>"users"}
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = E'') LIMIT 1[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = E'57ed9cc5ddf552cf8a53e1ede7b277c8a622d096db17d6ebb758a1aa839ef2ef1fc643eceedbb9097e71201c43c5520592ebc3af73452285322db485a93e013b') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering users/new
+Rendered users/_form (12.5ms)
+Completed in 52ms (View: 22, DB: 3) | 200 OK [http://localhost/account]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-06-30 16:15:45) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering user_sessions/new
+Completed in 22ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+/!\ FAILSAFE /!\  Thu Jul 01 12:14:09 +0800 2010
+  Status: 500 Internal Server Error
+  could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/postgresql_adapter.rb:968:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/postgresql_adapter.rb:968:in `connect'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/postgresql_adapter.rb:968:in `connect'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/postgresql_adapter.rb:217:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `new'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 12:15:38) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering user_sessions/new
+Completed in 878ms (View: 26, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 12:16:30) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering user_sessions/new
+Completed in 39ms (View: 22, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 12:16:34) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering user_sessions/new
+Completed in 22ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 12:28:02) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering user_sessions/new
+Completed in 28ms (View: 11, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-01 12:28:02) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/public/blueprint.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-01 12:28:02) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/public/custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 12:28:16) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering user_sessions/new
+Completed in 24ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-01 12:28:16) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/public/blueprint.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-01 12:28:16) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/public/custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 12:28:51) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering user_sessions/new
+Completed in 28ms (View: 11, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-01 12:28:51) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/blueprint.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 12:29:25) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering user_sessions/new
+Completed in 29ms (View: 12, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 12:29:48) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering user_sessions/new
+Completed in 99ms (View: 10, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 12:30:29) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering user_sessions/new
+Completed in 27ms (View: 10, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 14:26:58) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+
+ActionView::TemplateError (undefined local variable or method `title' for #<ActionView::Base:0x25d82a0>) on line #5 of app/views/layouts/application.html.erb:
+2:   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+3: <html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+4:   <head>
+5:     <title><%= title %></title>
+6:     <%= render 'layouts/stylesheets' %>
+7:   </head>
+8:   <body>
+
+    app/views/layouts/application.html.erb:5
+
+Rendered rescues/_trace (45.8ms)
+Rendered rescues/_request_and_response (1.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 14:27:51) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+
+ActionView::TemplateError (undefined local variable or method `title' for #<ActionView::Base:0x246c574>) on line #5 of app/views/layouts/application.html.erb:
+2:   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+3: <html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+4:   <head>
+5:     <title><%= title %></title>
+6:     <%= render 'layouts/stylesheets' %>
+7:   </head>
+8:   <body>
+
+    app/views/layouts/application.html.erb:5
+
+Rendered rescues/_trace (45.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 14:32:21) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.9ms)
+Rendered layouts/_header (1.2ms)
+Completed in 32ms (View: 15, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-01 14:32:21) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 14:32:51) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (1.7ms)
+Completed in 28ms (View: 11, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-01 14:32:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/dcmitlogo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 14:36:49) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.5ms)
+Completed in 94ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 14:40:40) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (1.3ms)
+Completed in 28ms (View: 11, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 14:40:42) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.5ms)
+Completed in 23ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 14:40:52) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (1.7ms)
+Completed in 28ms (View: 11, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 14:41:35) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.4ms)
+ERROR: compiling _run_erb_app47views47layouts47_header46html46erb_locals_header_object RAISED compile error
+/Users/KeithChin/Desktop/rails_app/entree/app/views/layouts/_header.html.erb:4: syntax error, unexpected tIDENTIFIER, expecting ')'
+..., :controller => "user_session", :action => "new" ).to_s); @...
+                              ^
+/Users/KeithChin/Desktop/rails_app/entree/app/views/layouts/_header.html.erb:4: syntax error, unexpected tIDENTIFIER, expecting ')'
+...user_session", :action => "new" ).to_s); @output_buffer.conc...
+                              ^
+/Users/KeithChin/Desktop/rails_app/entree/app/views/layouts/_header.html.erb:5: unknown regexp option - l
+/Users/KeithChin/Desktop/rails_app/entree/app/views/layouts/_header.html.erb:5: syntax error, unexpected $undefined
+... @output_buffer.concat "</li>\n"
+                              ^
+/Users/KeithChin/Desktop/rails_app/entree/app/views/layouts/_header.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+..._buffer.concat(( link_to "Sign in", '#' ).to_s); @output_buf...
+                              ^
+/Users/KeithChin/Desktop/rails_app/entree/app/views/layouts/_header.html.erb:7: unknown regexp option - l
+/Users/KeithChin/Desktop/rails_app/entree/app/views/layouts/_header.html.erb:7: syntax error, unexpected $undefined
+@output_buffer.concat "  </ul>\n"
+                               ^
+/Users/KeithChin/Desktop/rails_app/entree/app/views/layouts/_header.html.erb:8: unterminated string meets end of file
+/Users/KeithChin/Desktop/rails_app/entree/app/views/layouts/_header.html.erb:8: syntax error, unexpected tSTRING_END, expecting tSTRING_CONTENT or tREGEXP_END or tSTRING_DBEG or tSTRING_DVAR
+Function body:           def _run_erb_app47views47layouts47_header46html46erb_locals_header_object(local_assigns)
+            old_output_buffer = output_buffer;header = local_assigns[:header];object = local_assigns[:object];;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<div id=\"header\" class=\"round\">\n"
+@output_buffer.concat "  "; @output_buffer.concat(( image_tag("dcmitlogo.png", :alt => "Sample App", :class => "round") ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  <ul class=\"navigation round\">\n"
+@output_buffer.concat "    <li>"; @output_buffer.concat(( link_to "Home, :controller => "user_session", :action => "new" ).to_s); @output_buffer.concat "</li>\n"
+@output_buffer.concat "    <li>"; @output_buffer.concat(( link_to "Help", '#' ).to_s); @output_buffer.concat "</li>\n"
+@output_buffer.concat "    <li>"; @output_buffer.concat(( link_to "Sign in", '#' ).to_s); @output_buffer.concat "</li>\n"
+@output_buffer.concat "  </ul>\n"
+@output_buffer.concat "</div>\n"
+@output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/KeithChin/Desktop/rails_app/entree/app/views/layouts/_header.html.erb:8:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:20:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:19:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:44:in `render_partial'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/partials.rb:184:in `render_partial'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:276:in `render'
+/Users/KeithChin/Desktop/rails_app/entree/app/views/layouts/application.html.erb:10:in `_run_erb_app47views47layouts47application46html46erb'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:34:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:34:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:306:in `with_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:30:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:352:in `_render_with_layout'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1326:in `default_render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/KeithChin/Desktop/rails_app/entree/app/views/layouts/_header.html.erb:4: syntax error, unexpected tIDENTIFIER, expecting ')'
+..., :controller => "user_session", :action => "new" ).to_s); @...
+                              ^
+/Users/KeithChin/Desktop/rails_app/entree/app/views/layouts/_header.html.erb:4: syntax error, unexpected tIDENTIFIER, expecting ')'
+...user_session", :action => "new" ).to_s); @output_buffer.conc...
+                              ^
+/Users/KeithChin/Desktop/rails_app/entree/app/views/layouts/_header.html.erb:5: unknown regexp option - l
+/Users/KeithChin/Desktop/rails_app/entree/app/views/layouts/_header.html.erb:5: syntax error, unexpected $undefined
+... @output_buffer.concat "</li>\n"
+                              ^
+/Users/KeithChin/Desktop/rails_app/entree/app/views/layouts/_header.html.erb:6: syntax error, unexpected tCONSTANT, expecting ')'
+..._buffer.concat(( link_to "Sign in", '#' ).to_s); @output_buf...
+                              ^
+/Users/KeithChin/Desktop/rails_app/entree/app/views/layouts/_header.html.erb:7: unknown regexp option - l
+/Users/KeithChin/Desktop/rails_app/entree/app/views/layouts/_header.html.erb:7: syntax error, unexpected $undefined
+@output_buffer.concat "  </ul>\n"
+                               ^
+/Users/KeithChin/Desktop/rails_app/entree/app/views/layouts/_header.html.erb:8: unterminated string meets end of file
+/Users/KeithChin/Desktop/rails_app/entree/app/views/layouts/_header.html.erb:8: syntax error, unexpected tSTRING_END, expecting tSTRING_CONTENT or tREGEXP_END or tSTRING_DBEG or tSTRING_DVAR) on line #4 of app/views/layouts/_header.html.erb:
+1: <div id="header" class="round">
+2:   <%= image_tag("dcmitlogo.png", :alt => "Sample App", :class => "round") %>
+3:   <ul class="navigation round">
+4:     <li><%= link_to "Home, :controller => "user_session", :action => "new" %></li>
+5:     <li><%= link_to "Help", '#' %></li>
+6:     <li><%= link_to "Sign in", '#' %></li>
+7:   </ul>
+
+    app/views/layouts/_header.html.erb:8:in `compile!'
+    app/views/layouts/application.html.erb:10
+
+Rendered rescues/_trace (119.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 14:41:57) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.5ms)
+Rendered layouts/_header (2.2ms)
+Completed in 28ms (View: 12, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 14:42:00) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.7ms)
+Completed in 23ms (View: 7, DB: 1) | 200 OK [http://localhost/user_session/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 14:42:03) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.7ms)
+Completed in 24ms (View: 7, DB: 0) | 200 OK [http://localhost/user_session/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 14:43:12) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.5ms)
+Rendered layouts/_header (0.7ms)
+Completed in 27ms (View: 11, DB: 0) | 200 OK [http://localhost/user_session/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 14:43:15) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.7ms)
+Completed in 23ms (View: 6, DB: 0) | 200 OK [http://localhost/user_session/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 14:43:28) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.7ms)
+Completed in 98ms (View: 12, DB: 0) | 200 OK [http://localhost/user_session/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 14:45:06) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.7ms)
+Completed in 29ms (View: 11, DB: 0) | 200 OK [http://localhost/user_session/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 14:48:34) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+ERROR: compiling _run_erb_app47views47user_sessions47new46html46erb RAISED compile error
+/Users/KeithChin/Desktop/rails_app/entree/app/views/user_sessions/new.html.erb:5: syntax error, unexpected ',', expecting '}'
+...ffer.concat(( f.label {:login, :class => 'round' } ).to_s); ...
+                              ^
+Function body:           def _run_erb_app47views47user_sessions47new46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h3>Login</h3>\n"
+@output_buffer.concat "\n"
+ form_for @user_session, :url => user_session_path do |f| ; @output_buffer.concat "\n"
+@output_buffer.concat "  "; @output_buffer.concat(( f.error_messages ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  "; @output_buffer.concat(( f.label {:login, :class => 'round' } ).to_s); @output_buffer.concat "<br />\n"
+@output_buffer.concat "  "; @output_buffer.concat(( f.text_field :login ).to_s); @output_buffer.concat "<br />\n"
+@output_buffer.concat "  <br />\n"
+@output_buffer.concat "  "; @output_buffer.concat(( f.label :password ).to_s); @output_buffer.concat "<br />\n"
+@output_buffer.concat "  "; @output_buffer.concat(( f.password_field :password ).to_s); @output_buffer.concat "<br />\n"
+@output_buffer.concat "  <br />\n"
+@output_buffer.concat "  "; @output_buffer.concat(( f.check_box :remember_me ).to_s); @output_buffer.concat(( f.label :remember_me ).to_s); @output_buffer.concat "<br />\n"
+@output_buffer.concat "  <br />\n"
+@output_buffer.concat "  "; @output_buffer.concat(( f.submit "Login" ).to_s); @output_buffer.concat " Or "; @output_buffer.concat(( link_to('click here to register', :controller => 'users', :action => 'new') ).to_s); @output_buffer.concat "\n"
+ end ; @output_buffer.concat "\n"
+@output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/KeithChin/Desktop/rails_app/entree/app/views/user_sessions/new.html.erb:18:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1326:in `default_render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/KeithChin/Desktop/rails_app/entree/app/views/user_sessions/new.html.erb:5: syntax error, unexpected ',', expecting '}'
+...ffer.concat(( f.label {:login, :class => 'round' } ).to_s); ...
+                              ^) on line #5 of app/views/user_sessions/new.html.erb:
+2: 
+3: <% form_for @user_session, :url => user_session_path do |f| %>
+4:   <%= f.error_messages %>
+5:   <%= f.label {:login, :class => 'round' } %><br />
+6:   <%= f.text_field :login %><br />
+7:   <br />
+8:   <%= f.label :password %><br />
+
+    app/views/user_sessions/new.html.erb:18:in `compile!'
+
+Rendered rescues/_trace (41.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 14:50:19) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.7ms)
+Completed in 28ms (View: 11, DB: 0) | 200 OK [http://localhost/user_session/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 14:50:24) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.7ms)
+Completed in 26ms (View: 7, DB: 0) | 200 OK [http://localhost/user_session/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 14:53:19) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.5ms)
+Rendered layouts/_header (0.7ms)
+Completed in 28ms (View: 11, DB: 0) | 200 OK [http://localhost/user_session/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 14:55:18) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.7ms)
+Completed in 28ms (View: 11, DB: 0) | 200 OK [http://localhost/user_session/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 14:56:08) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.7ms)
+Completed in 33ms (View: 11, DB: 0) | 200 OK [http://localhost/user_session/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 14:56:16) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.7ms)
+Completed in 23ms (View: 7, DB: 0) | 200 OK [http://localhost/user_session/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 14:57:46) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.5ms)
+Rendered layouts/_header (0.7ms)
+Completed in 25ms (View: 8, DB: 0) | 200 OK [http://localhost/user_session/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 14:58:09) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.7ms)
+Completed in 24ms (View: 7, DB: 0) | 200 OK [http://localhost/user_session/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 15:05:40) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.7ms)
+Completed in 31ms (View: 11, DB: 0) | 200 OK [http://localhost/user_session/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 15:07:07) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.7ms)
+Completed in 23ms (View: 7, DB: 0) | 200 OK [http://localhost/user_session/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 15:07:56) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.7ms)
+Completed in 23ms (View: 6, DB: 0) | 200 OK [http://localhost/user_session/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 15:08:13) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.7ms)
+Completed in 24ms (View: 6, DB: 0) | 200 OK [http://localhost/user_session/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 15:09:53) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (1.4ms)
+Completed in 27ms (View: 11, DB: 0) | 200 OK [http://localhost/user_session/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 15:09:55) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.6ms)
+Completed in 90ms (View: 7, DB: 0) | 200 OK [http://localhost/user_session/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 15:10:06) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.6ms)
+Completed in 23ms (View: 6, DB: 0) | 200 OK [http://localhost/user_session/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-07-01 15:10:10) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"[FILTERED]", "login"=>"", "remember_me"=>"0"}, "action"=>"create", "authenticity_token"=>"OTW2Mpvh37/YrVvMxFp2kLIW7Emly5Rg5H/3XJGJVNI=", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.6ms)
+Completed in 24ms (View: 7, DB: 0) | 200 OK [http://localhost/user_session]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-07-01 15:11:20) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"[FILTERED]", "login"=>"", "remember_me"=>"0"}, "action"=>"create", "authenticity_token"=>"OTW2Mpvh37/YrVvMxFp2kLIW7Emly5Rg5H/3XJGJVNI=", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.5ms)
+Rendered layouts/_header (0.6ms)
+Completed in 27ms (View: 8, DB: 0) | 200 OK [http://localhost/user_session]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-07-01 15:17:59) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"[FILTERED]", "login"=>"", "remember_me"=>"0"}, "action"=>"create", "authenticity_token"=>"OTW2Mpvh37/YrVvMxFp2kLIW7Emly5Rg5H/3XJGJVNI=", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.6ms)
+Rendered layouts/_header (1.9ms)
+Completed in 39ms (View: 20, DB: 0) | 200 OK [http://localhost/user_session]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-07-01 15:18:51) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"[FILTERED]", "login"=>"darren", "remember_me"=>"0"}, "action"=>"create", "authenticity_token"=>"OTW2Mpvh37/YrVvMxFp2kLIW7Emly5Rg5H/3XJGJVNI=", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (108.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = E'darren') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.6ms)
+Completed in 364ms (View: 8, DB: 108) | 200 OK [http://localhost/user_session]
+  [4;35;1mSQL (2.9ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-07-01 15:18:55) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"[FILTERED]", "login"=>"darren", "remember_me"=>"0"}, "action"=>"create", "authenticity_token"=>"OTW2Mpvh37/YrVvMxFp2kLIW7Emly5Rg5H/3XJGJVNI=", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".login) = E'darren') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.6ms)
+Completed in 29ms (View: 7, DB: 4) | 200 OK [http://localhost/user_session]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-07-01 15:18:57) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"[FILTERED]", "login"=>"darren", "remember_me"=>"0"}, "action"=>"create", "authenticity_token"=>"OTW2Mpvh37/YrVvMxFp2kLIW7Emly5Rg5H/3XJGJVNI=", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = E'darren') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.6ms)
+Completed in 30ms (View: 8, DB: 2) | 200 OK [http://localhost/user_session]
+  [4;35;1mSQL (2.9ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-07-01 15:19:01) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"[FILTERED]", "login"=>"darren", "remember_me"=>"0"}, "action"=>"create", "authenticity_token"=>"OTW2Mpvh37/YrVvMxFp2kLIW7Emly5Rg5H/3XJGJVNI=", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".login) = E'darren') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (24.9ms)[0m   [0mUPDATE "users" SET "login_count" = 3, "last_request_at" = '2010-07-01 07:19:01.670321', "last_login_at" = '2010-06-30 08:15:13.812248', "updated_at" = '2010-07-01 07:19:01.671717', "current_login_at" = '2010-07-01 07:19:01.661101' WHERE "id" = 4[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/account
+Completed in 284ms (DB: 30) | 302 Found [http://localhost/user_session]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-07-01 15:19:01) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;35;1mUser Load (1.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = E'4') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "last_request_at" = '2010-07-01 07:19:01.786958', "updated_at" = '2010-07-01 07:19:01.787587' WHERE "id" = 4[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.6ms)
+Completed in 69ms (View: 9, DB: 3) | 200 OK [http://localhost/account]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-07-01 15:23:04) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = E'4') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "last_request_at" = '2010-07-01 07:23:04.493622', "updated_at" = '2010-07-01 07:23:04.494217' WHERE "id" = 4[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.4ms)
+ERROR: compiling _run_erb_app47views47layouts47_header46html46erb_locals_header_object RAISED compile error
+/Users/KeithChin/Desktop/rails_app/entree/app/views/layouts/_header.html.erb:12: syntax error, unexpected kENSURE, expecting kEND
+/Users/KeithChin/Desktop/rails_app/entree/app/views/layouts/_header.html.erb:14: syntax error, unexpected $end, expecting kEND
+Function body:           def _run_erb_app47views47layouts47_header46html46erb_locals_header_object(local_assigns)
+            old_output_buffer = output_buffer;header = local_assigns[:header];object = local_assigns[:object];;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<div id=\"header\" class=\"container round\">\n"
+@output_buffer.concat "  "; @output_buffer.concat(( image_tag("dcmitlogo.png", :alt => "Sample App", :class => "round") ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  <ul class=\"navigation round\">\n"
+@output_buffer.concat "    <li>"; @output_buffer.concat(( link_to "Home", new_user_session_path ).to_s); @output_buffer.concat "</li>\n"
+@output_buffer.concat "    <li>"; @output_buffer.concat(( link_to "Help", '#' ).to_s); @output_buffer.concat "</li>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "    ";  if !user_session; @signing = 'Sign in'; @signing = 'Sign out'; ; @output_buffer.concat "\n"
+@output_buffer.concat "    <li>"; @output_buffer.concat(( link_to @signing, '#' ).to_s); @output_buffer.concat "</li>\n"
+@output_buffer.concat "  </ul>\n"
+@output_buffer.concat "</div>\n"
+@output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/KeithChin/Desktop/rails_app/entree/app/views/layouts/_header.html.erb:14:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:20:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:19:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:44:in `render_partial'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/partials.rb:184:in `render_partial'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:276:in `render'
+/Users/KeithChin/Desktop/rails_app/entree/app/views/layouts/application.html.erb:10:in `_run_erb_app47views47layouts47application46html46erb'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:34:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:34:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:306:in `with_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:30:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:352:in `_render_with_layout'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1326:in `default_render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/KeithChin/Desktop/rails_app/entree/app/views/layouts/_header.html.erb:12: syntax error, unexpected kENSURE, expecting kEND
+/Users/KeithChin/Desktop/rails_app/entree/app/views/layouts/_header.html.erb:14: syntax error, unexpected $end, expecting kEND) on line #12 of app/views/layouts/_header.html.erb:
+9:   </ul>
+10: </div>
+
+    app/views/layouts/_header.html.erb:14:in `compile!'
+    app/views/layouts/application.html.erb:10
+
+Rendered rescues/_trace (59.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-07-01 15:23:53) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = E'4') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE "users" SET "last_request_at" = '2010-07-01 07:23:53.498912', "updated_at" = '2010-07-01 07:23:53.499597' WHERE "id" = 4[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.4ms)
+
+ActionView::TemplateError (undefined local variable or method `user_session' for #<ActionView::Base:0x262dae8>) on line #7 of app/views/layouts/_header.html.erb:
+4:     <li><%= link_to "Home", new_user_session_path %></li>
+5:     <li><%= link_to "Help", '#' %></li>
+6: 
+7:     <% if !user_session %>
+8:       <% @signing = 'Sign in' %>
+9:     <% else %>
+10:       <% @signing = 'Sign out' %>
+
+    app/views/layouts/_header.html.erb:7
+    app/views/layouts/application.html.erb:10
+
+Rendered rescues/_trace (51.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.7ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-07-01 15:24:06) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = E'4') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "last_request_at" = '2010-07-01 07:24:06.659304', "updated_at" = '2010-07-01 07:24:06.659971' WHERE "id" = 4[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (1.7ms)
+Completed in 34ms (View: 8, DB: 3) | 200 OK [http://localhost/account]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-07-01 15:24:22) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = E'4') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "last_request_at" = '2010-07-01 07:24:22.447038', "updated_at" = '2010-07-01 07:24:22.447667' WHERE "id" = 4[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (2.0ms)
+Completed in 112ms (View: 9, DB: 3) | 200 OK [http://localhost/account]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-07-01 15:25:12) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = E'4') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "last_request_at" = '2010-07-01 07:25:12.588273', "updated_at" = '2010-07-01 07:25:12.588970' WHERE "id" = 4[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (1.6ms)
+Completed in 34ms (View: 8, DB: 3) | 200 OK [http://localhost/account]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-07-01 15:26:19) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = E'4') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "last_request_at" = '2010-07-01 07:26:19.504982', "updated_at" = '2010-07-01 07:26:19.505577' WHERE "id" = 4[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (1.8ms)
+Completed in 33ms (View: 8, DB: 3) | 200 OK [http://localhost/account]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-01 15:26:23) [GET]
+
+ActionController::RoutingError (No route matches "/:controller%20=%3E%20%27user_session%27;%20:action%20=%3E%20%27destroy%27" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2010-07-01 15:29:59) [GET]
+  Parameters: {"action"=>"logout", "controller"=>"users"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = E'4') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "last_request_at" = '2010-07-01 07:29:59.775807', "updated_at" = '2010-07-01 07:29:59.776432' WHERE "id" = 4[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/user_session/new
+Completed in 25ms (DB: 3) | 302 Found [http://localhost/users/logout]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 15:29:59) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.8ms)
+Completed in 23ms (View: 7, DB: 0) | 200 OK [http://localhost/user_session/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-07-01 15:30:06) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"[FILTERED]", "login"=>"darren", "remember_me"=>"0"}, "action"=>"create", "authenticity_token"=>"OTW2Mpvh37/YrVvMxFp2kLIW7Emly5Rg5H/3XJGJVNI=", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".login) = E'darren') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.8ms)
+Completed in 39ms (View: 9, DB: 2) | 200 OK [http://localhost/user_session]
+  [4;36;1mSQL (3.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-07-01 15:30:10) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"[FILTERED]", "login"=>"darren", "remember_me"=>"0"}, "action"=>"create", "authenticity_token"=>"OTW2Mpvh37/YrVvMxFp2kLIW7Emly5Rg5H/3XJGJVNI=", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = E'darren') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE "users" SET "login_count" = 4, "last_request_at" = '2010-07-01 07:30:10.752595', "last_login_at" = '2010-07-01 07:19:01.661101', "updated_at" = '2010-07-01 07:30:10.753767', "current_login_at" = '2010-07-01 07:30:10.752177' WHERE "id" = 4[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/account
+Completed in 30ms (DB: 6) | 302 Found [http://localhost/user_session]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-07-01 15:30:10) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = E'4') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "last_request_at" = '2010-07-01 07:30:10.802375', "updated_at" = '2010-07-01 07:30:10.803029' WHERE "id" = 4[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.5ms)
+Rendered layouts/_header (3.6ms)
+Completed in 34ms (View: 7, DB: 3) | 200 OK [http://localhost/account]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-07-01 15:30:53) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = E'4') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "last_request_at" = '2010-07-01 07:30:53.145622', "updated_at" = '2010-07-01 07:30:53.146222' WHERE "id" = 4[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.5ms)
+Rendered layouts/_header (1.8ms)
+Completed in 33ms (View: 8, DB: 3) | 200 OK [http://localhost/account]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-01 15:30:55) [GET]
+
+ActionController::RoutingError (No route matches "/:controller%20=%3E%20%27users%27;%20:action%20=%3E%20%27destroy%27" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2010-07-01 15:31:03) [GET]
+  Parameters: {"action"=>"logout", "controller"=>"users"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = E'4') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "last_request_at" = '2010-07-01 07:31:03.106546', "updated_at" = '2010-07-01 07:31:03.107199' WHERE "id" = 4[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/user_session/new
+Completed in 25ms (DB: 3) | 302 Found [http://localhost/users/logout]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-01 15:31:03) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (0.5ms)
+Rendered layouts/_header (0.8ms)
+Completed in 24ms (View: 7, DB: 0) | 200 OK [http://localhost/user_session/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-07-01 17:16:54) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"[FILTERED]", "login"=>"darren", "remember_me"=>"0"}, "action"=>"create", "authenticity_token"=>"OTW2Mpvh37/YrVvMxFp2kLIW7Emly5Rg5H/3XJGJVNI=", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = E'darren') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.7ms)[0m   [0;1mUPDATE "users" SET "login_count" = 5, "last_request_at" = '2010-07-01 09:16:54.748731', "last_login_at" = '2010-07-01 07:30:10.752177', "updated_at" = '2010-07-01 09:16:54.749886', "current_login_at" = '2010-07-01 09:16:54.748306' WHERE "id" = 4[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/account
+Completed in 86ms (DB: 3) | 302 Found [http://localhost/user_session]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-07-01 17:16:54) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = E'4') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "last_request_at" = '2010-07-01 09:16:54.896154', "updated_at" = '2010-07-01 09:16:54.896761' WHERE "id" = 4[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.5ms)
+Rendered layouts/_header (2.1ms)
+Completed in 34ms (View: 9, DB: 3) | 200 OK [http://localhost/account]
+/!\ FAILSAFE /!\  Fri Jul 02 09:51:39 +0800 2010
+  Status: 500 Internal Server Error
+  could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/postgresql_adapter.rb:968:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/postgresql_adapter.rb:968:in `connect'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/postgresql_adapter.rb:968:in `connect'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/postgresql_adapter.rb:217:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `new'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-02 09:52:10) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered layouts/_stylesheets (6.8ms)
+Rendered layouts/_header (7.4ms)
+Completed in 497ms (View: 89, DB: 0) | 200 OK [http://localhost/]

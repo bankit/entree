@@ -1,4 +1,5 @@
-<h1>Login</h1>
+<div class="nicewording">
+<h3>Entrée</h3>
 
 <% form_for @user_session, :url => user_session_path do |f| %>
   <%= f.error_messages %>
@@ -12,3 +13,4 @@
   <br />
   <%= f.submit "Login" %> Or <%= link_to('click here to register', :controller => 'users', :action => 'new') %>
 <% end %>
+</div>
