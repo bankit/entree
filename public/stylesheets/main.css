@@ -1,0 +1,67 @@
+/* Resetting all details */
+html, body, div, span, p, h1, h2, h3, h4, h5, h6, ul, li, form, fieldset, table, td, tr, th, img { margin: 0px; padding: 0px; border: 0px; outline: 0px; }
+
+body { background: url('/images/bg.png'); color: #fff; font-family: Lucida Grande,Verdana, Arial, Helvetica, sans-serif; font-size: 12px; }
+label { width: 120px; clear: left; float: left; }
+input.field { border-color:#AAAAAA #DDDDDD #DDDDDD #AAAAAA; border-style: solid; border-width: 1px; padding: 3px; }
+textarea.field { border-color:#AAAAAA #DDDDDD #DDDDDD #AAAAAA; border-style: solid; border-width: 1px; padding: 3px; }
+a { color: #9A0A0A; text-decoration: underline; }
+
+div#header { width: 1000px; text-align: left; margin-bottom: 10px; height: 190px; position: relative; }
+div#navigation { position: absolute; bottom: 18px; left: 42px; }
+div#navigation ul { list-style: none; }
+div#navigation ul li { display: inline; padding: 10px 15px; background: #112a49; color: #fff; margin-right: 8px; }
+div#navigation a { color: #fff; text-decoration: none; }
+div#navigation a:visited { color: #fff; text-decoration: none; }
+div#navigation a:active { color: #fff; text-decoration: none; }
+div#navigation a:hover { text-decoration: underline; }
+
+div#navigation ul li.current { background: #fff; color: #9a0a0a; }
+div#navigation ul li.current a { color: #9a0a0a; text-decoration: underline; }
+div#navigation ul li.current a:visited { color: #9a0a0a; }
+div#navigation ul li.current a:active { color: #9a0a0a; }
+div#navigation ul li.current a:hover { text-decoration: underline; }
+
+div#main { width: 1000px; text-align: left; color: #444; }
+div#main div#content { width: 690px; background: #fff url('/images/top-corner.gif') left top no-repeat; }
+div#main div#content div.text { margin: 20px 10px; line-height: 18px; }
+div#side { float: right; width: 300px; font-family: Georgia; color: #9a0a0a; }
+div#side div.item { margin-top: 10px; background: #f5f5f5; font-family: Lucida Grande,Verdana, Arial, Helvetica, sans-serif; }
+div#side div.item div { margin: 10px; padding: 10px; }
+
+div#advertisement { border: solid 8px #fff; background: #eee; font-size: 24px; }
+div#advertisement div { padding: 10px; }
+
+/* Contact form helpers */
+td.label { padding: 5px; }
+
+/* Tyopgraphy */
+.title { color: #9A0A0A; font-family: Georgia; font-size: 22px; }
+
+/* Error field handerling */
+.errorExplanation { background: #9A0A0A; color: #fff; border: 1px solid #9A0A0A; margin: 0 30px 10px 30px; font-weight: #000; padding: 5px; }
+.errorExplanation h2 { padding: 5px; border: none; background: none; font-size: 14px; color: #fff; }
+.errorExplanation p { padding: 5px; }
+.errorExplanation ul { margin: 0px; padding: 0px 0px 0px 15px; }
+.errorExplanation li { list-style-position: inside; list-style-image: none; list-style-type: circle; display: list-item; }
+div.fieldWithErrors { display: inline; }
+.fieldWithErrors input { border: solid 1px #9A0A0A; display: inline; }
+.fieldWithErrors textarea { border: solid 1px #9A0A0A; }
+div#error { border: thin solid #9A0A0A; background-color: #9A0A0A; padding: 10px; color: #fff; margin-top: 20px; }
+div#error p#title { font-size: 16px; color: #fff; }
+
+/* Success Errors */
+div#flash { border: solid thin #57a7d1; background-color: #cbeeff; text-align: left; color: 18px; padding: 5px 15px; }
+
+/* Show Portfolio Handler */
+div.attachment { float: left; margin: 10px; padding: 5px; border: solid #ccc 4px; }
+div.body { padding: 5px; background: #eee; border-bottom: solid 1px #ccc; }
+div.body ul li { list-style-type: disk; list-style-position: inside; padding: 3px; }
+div.list-portfolio { width: 150px; padding: 5px; margin: 15px; float: left; border: solid 5px #fff; }
+div.list-portfolio:hover { border: solid 5px #ccc; }
+div.list-portfolio span { text-align: center; padding: 5px; }
+
+/* Javascript at the front (Slide Viewer) */
+#frontslideshow { height:  350px; width: 600px; padding: 0; margin: 0; overflow: hidden; } 
+#frontslideshow img { width: 600px; height: 350px; top: 0; left: 0; }
+#caption { text-align: right; font-style: italic; margin: 4px; margin-right: 25px; font-size: 20px; }
